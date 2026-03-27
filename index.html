@@ -210,6 +210,39 @@
             filter: grayscale(0%) brightness(100%);
             opacity: 1;
         }
+
+        /* Profile image styling */
+        .profile-image {
+            border: 4px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+        .profile-image:hover {
+            transform: scale(1.02);
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Collaboration logo container */
+        .logo-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1rem;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .logo-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        .logo-container img {
+            max-height: 60px;
+            max-width: 100%;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body class="gradient-bg min-h-screen">
@@ -318,15 +351,15 @@
                         <div class="text-sm text-gray-400">Publications</div>
                     </div>
                     <div class="glass-card rounded-2xl p-6 text-center">
-                        <div class="stat-number text-3xl font-bold mb-2" data-target="5">0</div>
+                        <div class="stat-number text-3xl font-bold mb-2" data-target="8">0</div>
                         <div class="text-sm text-gray-400">Years Experience</div>
                     </div>
                     <div class="glass-card rounded-2xl p-6 text-center">
-                        <div class="stat-number text-3xl font-bold mb-2" data-target="1">0</div>
+                        <div class="stat-number text-3xl font-bold mb-2" data-target="5">0</div>
                         <div class="text-sm text-gray-400">Research Grants</div>
                     </div>
                     <div class="glass-card rounded-2xl p-6 text-center">
-                        <div class="stat-number text-3xl font-bold mb-2" data-target="10">0</div>
+                        <div class="stat-number text-3xl font-bold mb-2" data-target="100">0</div>
                         <div class="text-sm text-gray-400">+ Students Supervised</div>
                     </div>
                 </div>
@@ -338,11 +371,11 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section with Photo -->
     <section id="about" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="reveal">
+                <div class="reveal order-2 md:order-1">
                     <h2 class="font-display text-4xl font-bold text-white mb-6">Professional Summary</h2>
                     <div class="space-y-4 text-gray-300 leading-relaxed">
                         <p>
@@ -380,41 +413,27 @@
                     </div>
                 </div>
                 
-                <div class="reveal relative">
-                    <div class="glass-card rounded-3xl p-8 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"></div>
-                        
-                        <h3 class="font-display text-2xl font-bold text-white mb-6">Education</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                                    <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-white">Ph.D. Electronics & Electrical Engineering</h4>
-                                    <p class="text-blue-400 text-sm">University of Glasgow, UK (2021-2024)</p>
-                                    <p class="text-gray-400 text-sm mt-1">Thesis: Leveraging ML and Computer Vision for Advanced UAV Communications</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
-                                    <i data-lucide="award" class="w-6 h-6 text-white"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-white">M.S. Software Engineering</h4>
-                                    <p class="text-purple-400 text-sm">COMSATS University Islamabad, Pakistan (2015-2018)</p>
+                <div class="reveal order-1 md:order-2 flex flex-col items-center">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur opacity-30"></div>
+                        <img src="/mnt/kimi/upload/Pi7_Passport_Photo.jpeg" alt="Dr. Iftikhar Ahmad" class="profile-image relative w-64 h-80 object-cover rounded-2xl">
+                    </div>
+                    
+                    <div class="mt-6 glass-card rounded-xl p-4 w-full max-w-sm">
+                        <h3 class="font-display text-lg font-bold text-white mb-3 text-center">Education</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <img src="/mnt/kimi/upload/ul1a578m86qs0un5auokra9usk.png" alt="Cranfield" class="w-8 h-8 object-contain rounded bg-white p-1">
+                                <div class="text-left">
+                                    <p class="text-sm font-semibold text-white">Ph.D. & Research Fellow</p>
+                                    <p class="text-xs text-gray-400">Cranfield University</p>
                                 </div>
                             </div>
-                            
-                            <div class="flex gap-4">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
-                                    <i data-lucide="book-open" class="w-6 h-6 text-white"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-white">B.S. Computer Science</h4>
-                                    <p class="text-green-400 text-sm">University of Malakand, Pakistan (2010-2014)</p>
+                            <div class="flex items-center gap-3">
+                                <img src="/mnt/kimi/upload/image.png" alt="Glasgow" class="w-8 h-8 object-contain rounded bg-white p-1">
+                                <div class="text-left">
+                                    <p class="text-sm font-semibold text-white">Ph.D. Electronics & Electrical Eng.</p>
+                                    <p class="text-xs text-gray-400">University of Glasgow</p>
                                 </div>
                             </div>
                         </div>
@@ -837,64 +856,44 @@
         </div>
     </section>
 
-    <!-- Collaborations -->
+    <!-- Collaborations with Real Logos -->
     <section class="py-16 relative bg-slate-900/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal">
                 <h2 class="font-display text-3xl font-bold text-white mb-4">Research Collaborations</h2>
+                <p class="text-gray-400 mb-8">Working with leading institutions and organizations</p>
             </div>
             
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center justify-items-center reveal">
                 <!-- ESA Logo -->
-                <div class="org-logo glass px-6 py-4 rounded-xl flex flex-col items-center gap-2 hover:scale-105 transition cursor-pointer" title="European Space Agency">
-                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                    </svg>
-                    <span class="text-xs font-semibold tracking-wider">ESA</span>
+                <div class="logo-container w-full" title="European Space Agency">
+                    <img src="/mnt/kimi/upload/european-space-agency-logo-agence-spatiale-space-logo-6aad33276cdcf630811399288f5b569d.png" alt="ESA" class="max-h-16">
                 </div>
 
                 <!-- OneWeb Logo -->
-                <div class="org-logo glass px-6 py-4 rounded-xl flex flex-col items-center gap-2 hover:scale-105 transition cursor-pointer" title="OneWeb">
-                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
-                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
-                        <path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-                    </svg>
-                    <span class="text-xs font-semibold tracking-wider">ONEWEB</span>
+                <div class="logo-container w-full" title="Eutelsat OneWeb">
+                    <img src="/mnt/kimi/upload/Eutelsat-OneWeb-logo_400.jpg" alt="OneWeb" class="max-h-12">
                 </div>
 
                 <!-- NPL Logo -->
-                <div class="org-logo glass px-6 py-4 rounded-xl flex flex-col items-center gap-2 hover:scale-105 transition cursor-pointer" title="National Physical Laboratory">
-                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                    </svg>
-                    <span class="text-xs font-semibold tracking-wider">NPL</span>
-                </div>
-
-                <!-- EPSRC Logo -->
-                <div class="org-logo glass px-6 py-4 rounded-xl flex flex-col items-center gap-2 hover:scale-105 transition cursor-pointer" title="Engineering and Physical Sciences Research Council">
-                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-                        <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
-                        <path d="M6 8h12M6 12h12M6 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    <span class="text-xs font-semibold tracking-wider">EPSRC</span>
+                <div class="logo-container w-full" title="National Physical Laboratory">
+                    <img src="/mnt/kimi/upload/b68c519f-88a4-456a-9e92351fb912aa5d.jpg" alt="NPL" class="max-h-14">
                 </div>
 
                 <!-- Cranfield Logo -->
-                <div class="org-logo glass px-6 py-4 rounded-xl flex flex-col items-center gap-2 hover:scale-105 transition cursor-pointer" title="Cranfield University">
-                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 3L1 9l11 6 9-4.5V17c0 3-4 5-9 5s-9-2-9-5V9"/>
-                    </svg>
-                    <span class="text-xs font-semibold tracking-wider">CRANFIELD</span>
+                <div class="logo-container w-full" title="Cranfield University">
+                    <img src="/mnt/kimi/upload/ul1a578m86qs0un5auokra9usk.png" alt="Cranfield University" class="max-h-16">
                 </div>
 
                 <!-- University of Glasgow Logo -->
-                <div class="org-logo glass px-6 py-4 rounded-xl flex flex-col items-center gap-2 hover:scale-105 transition cursor-pointer" title="University of Glasgow">
-                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L2 22h20L12 2zm0 3.5L18.5 20h-13L12 5.5z"/>
-                        <circle cx="12" cy="14" r="2" fill="currentColor"/>
-                    </svg>
-                    <span class="text-xs font-semibold tracking-wider">UofG</span>
+                <div class="logo-container w-full" title="University of Glasgow">
+                    <img src="/mnt/kimi/upload/image.png" alt="University of Glasgow" class="max-h-14">
+                </div>
+
+                <!-- EPSRC Text Logo -->
+                <div class="logo-container w-full flex flex-col items-center justify-center" title="Engineering and Physical Sciences Research Council">
+                    <span class="text-2xl font-bold text-slate-800">EPSRC</span>
+                    <span class="text-xs text-slate-600 text-center mt-1">Research Council</span>
                 </div>
             </div>
         </div>
@@ -959,7 +958,7 @@
                                     </svg>
                                 </a>
                                 <a href="#" class="social-icon w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-blue-500/30 transition border border-white/20" title="Cranfield Profile">
-                                    <i data-lucide="building-2" class="w-6 h-6 text-gray-300 hover:text-white"></i>
+                                    <img src="/mnt/kimi/upload/ul1a578m86qs0un5auokra9usk.png" alt="Cranfield" class="w-6 h-6 object-contain rounded">
                                 </a>
                             </div>
                         </div>
